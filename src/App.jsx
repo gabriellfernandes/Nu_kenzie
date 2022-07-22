@@ -2,17 +2,20 @@ import { useState } from 'react';
 import './App.css';
 import { toast, ToastContainer } from 'react-toastify';
 import  HomePage from "./components/homePage"
+import MainPage from "./components/mainPage"
 
 function App() {
   const [isLogin, setIsLogin] = useState(false)
+
+  
   return (
     <div className="App">
       <div>
         
         {isLogin ? (
         <div>
+          <MainPage setIsLogin={setIsLogin} toast={toast}/>
           <ToastContainer />
-          <h1>Entrou!</h1>
         </div>)
         :
         (<HomePage setIsLogin={setIsLogin} />)}
