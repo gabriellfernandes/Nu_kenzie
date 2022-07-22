@@ -21,15 +21,18 @@ function Form({setList, setFilter, list, toast}){
         <div className="conteiner-form">
             <form onSubmit={(event) => {
                 event.preventDefault()
-                if(inputdescription.length !== 0 && inputValue.length !== 0 && inputType !== "") {
+                console.log(inputValue)
+                if(inputdescription.length !== 0 && inputValue !== "" && inputValue !== "0" && inputType !== "") {
                     toast.success(inputType + " criada com sucesso")
                     
                     if(inputType == "Entrada") setList((oldList) => [...oldList, {description: inputdescription, value: inputValue, type: inputType, id: id}])
                     else setList((oldList) => [...oldList, {description: inputdescription, value: -inputValue, type: inputType, id: id}])
+                    
                     setFilter(list)
                     setId(id + 1)
                 }else{
-                    toast.error("Há espaço em branco",toastStyle)
+                    if(inputValue === "0") toast.error("Digite um Valor acima de 0",toastStyle)
+                    else toast.error("Há espaço em branco",toastStyle)
                 }
             }}>
                 <input type="text" 

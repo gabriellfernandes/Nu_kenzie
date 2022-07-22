@@ -1,8 +1,9 @@
-import Kenzie from "../../assets/Nu-Kenzie.png"
+import Kenzie from "../../assets/Nu-Kenzie-black.png"
 import { useState } from "react";
 import ListInput from "../list";
 import Form from "../form";
 import ValorTotal from "../totalValue";
+import "./style.css"
 
 
 function MainPage({setIsLogin , toast}){
@@ -12,7 +13,7 @@ function MainPage({setIsLogin , toast}){
 
     return(
         <>
-            <header>
+            <header className="header-main">
                 <img src={Kenzie} alt="logo" />
                 <button onClick={() => {setIsLogin(false)
                 toast.success("Deslogado com sucesso")}}>Inicio</button>

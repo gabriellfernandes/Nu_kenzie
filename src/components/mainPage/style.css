@@ -1,0 +1,32 @@
+.header-main{
+    width: 100vw;
+    height: 60px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F8F9FA;
+    box-shadow: 5px 9px 32px 0px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 5px 9px 32px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 5px 9px 32px 0px rgba(0,0,0,0.18);
+}
+
+.header-main img{
+    width: 145px;
+    height: 40;
+}
+
+.header-main button{
+    border: none;
+    background-color: #E9ECEF;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header-main button:hover{
+    transition: all 0.6s;
+    background-color: #FD377E;
+    color:  white;
+}

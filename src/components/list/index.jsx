@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import iconLixo from "../../assets/iconLixo.png"
+import iconVazio from "../../assets/NoCard.png"
 
 function ListInput({list, setList, filter,setFilter, setValue , toast}){
     
@@ -45,6 +46,7 @@ function ListInput({list, setList, filter,setFilter, setValue , toast}){
 
                             (<li>
                                 <p>Você ainda não possui nenhum lançamento</p>
+                                <img src={iconVazio} alt="" />
                             </li>)
                 }
                 
