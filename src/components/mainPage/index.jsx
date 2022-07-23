@@ -18,15 +18,18 @@ function MainPage({setIsLogin , toast}){
                 <button onClick={() => {setIsLogin(false)
                 toast.success("Deslogado com sucesso")}}>Inicio</button>
             </header>
-            <main>
-                <Form list={list} setList={setList} setFilter={setFilter} toast={toast} />
-
-                <div>
-                   <ListInput list={list} setList={setList} filter={filter} setFilter={setFilter} toast={toast}/>
+            <main className="main-conteiner">
+                <div className="conteiner-div">
+                    <Form list={list} setList={setList} setFilter={setFilter} toast={toast} />
+                    <div>
+                        <ListInput list={list} setList={setList} filter={filter} setFilter={setFilter} toast={toast}/>
+                    </div>
+                    
+                   
+                    <ValorTotal list={list}/>
+                    
                 </div>
-                <div>
-                   <ValorTotal list={list}/>
-                </div>
+                
             </main>
         </>
     )

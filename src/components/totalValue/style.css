@@ -1,0 +1,45 @@
+.conteiner-value{
+    width: 329px;
+    padding: 20px;
+    border: 1px solid #E9ECEF;
+    position: fixed;
+    top: 482px;
+    list-style: none;
+    text-align: left;
+}
+
+.conteiner-value li{
+    display: flex;
+    justify-content: space-between;
+    color: #343A40;
+    font-size: 16px;
+}
+
+
+
+.conteiner-value .valueTotal{
+    font-weight: 700;
+    font-size: 16px;
+    color: #212529;
+    margin-bottom: 10px;
+    border-radius: 18px;
+}
+
+.conteiner-value .valueTotal span{
+    color: #FD377E;
+}
+
+@media only screen and (max-width: 1000px) {
+    .conteiner-value{
+        position: relative;
+        top: 0;
+    }
+
+}
+
+@media only screen and (max-width: 430px) { 
+    .conteiner-value {
+        width: 233px;
+        padding: 20px;
+    }
+ }

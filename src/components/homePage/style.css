@@ -1,6 +1,8 @@
 .conteiner{
     background-color: #212529;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
     display: flex;
     align-items: center;
 }
@@ -10,8 +12,6 @@
     position: fixed;
     top: 22%;
     left: 50%;
-    
-   
 }
 
 .animate__backInRight{
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 50vw;
     margin-left: 80px;
     animation-duration: 1.5s;
 }
@@ -36,7 +36,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
-    width: 40%;
+    width: 40vw;
     text-align: left;
     padding-left: 100px;
     margin-bottom: 10px;
@@ -45,7 +45,7 @@
 .subTitle{
     font-size: 1.1rem;
     color: white;
-    width: 40%;
+    width: 40vw;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -63,3 +63,39 @@
     filter: brightness(0.9);
 }
 
+
+@media only screen and (max-width: 1024px) {    
+    .conteiner{
+        justify-content: center;
+    }
+    
+    .background{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 430px) {    
+    .conteiner{
+        justify-content: center;
+    }
+
+    .title{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-left: 0px;
+
+    }
+    
+    .subTitle{
+        font-size: 1rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .conteiner-Title img{
+        width: 60%;
+    }
+}

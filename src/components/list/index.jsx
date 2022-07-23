@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import iconLixo from "../../assets/iconLixo.png"
 import iconVazio from "../../assets/NoCard.png"
+import "./style.css"
 
 function ListInput({list, setList, filter,setFilter, setValue , toast}){
     
@@ -18,25 +19,25 @@ function ListInput({list, setList, filter,setFilter, setValue , toast}){
 
     return (
         <>
-            <div>
+            <div className="conteiner-resume">
                 <h2>Resumo financeiro</h2>
-                <ul>
-                    <li>
-                        <button onClick={() => fillter()}>Todos</button>
-                        <button onClick={() => fillter("Entrada")}>Entradas</button>
-                        <button onClick={() => fillter("Despesa")}>Despesas</button>
-                    </li>
-                </ul>
+                <div className="conteiner-filter">
+                    <button onClick={() => fillter()}>Todos</button>
+                    <button onClick={() => fillter("Entrada")}>Entradas</button>
+                    <button onClick={() => fillter("Despesa")}>Despesas</button>
+                </div>
             </div>
-            <ul>
+            <ul className="conteiner-itens">
                 {
                     filter.length > 0 
                         ? 
                             filter.map((elem) => {
-                                return (<li key={elem.id}>
-                                    <p>{elem.description}</p>
-                                    <p>{elem.type}</p>
-                                    <p>{elem.value}</p>
+                                return (<li key={elem.id} className="item">
+                                    <div className="conteiner-description">
+                                        <p className="description">{elem.description}</p>
+                                        <p>{elem.type}</p>
+                                    </div>
+                                    <p>{`R$ ${elem.value},00`}</p>
                                     <button onClick={() => {
                                         removeItem(elem) 
                                         toast.success("Transação removida com sucesso")}}><img src={iconLixo} alt="lixo"/></button>
@@ -45,8 +46,8 @@ function ListInput({list, setList, filter,setFilter, setValue , toast}){
                         :
 
                             (<li>
-                                <p>Você ainda não possui nenhum lançamento</p>
-                                <img src={iconVazio} alt="" />
+                                <p className="noItem">Você ainda não possui nenhum lançamento</p>
+                                <img src={iconVazio} alt="" className="img-noitem"/>
                             </li>)
                 }
                 

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./style.css"
 function Form({setList, setFilter, list, toast}){
     const [inputdescription, setInputDescription] = useState("")
     const [inputValue, setInputValue] = useState(0)
@@ -19,7 +20,7 @@ function Form({setList, setFilter, list, toast}){
     
     return (
         <div className="conteiner-form">
-            <form onSubmit={(event) => {
+            <form className="form" onSubmit={(event) => {
                 event.preventDefault()
                 console.log(inputValue)
                 if(inputdescription.length !== 0 && inputValue !== "" && inputValue !== "0" && inputType !== "") {
@@ -35,20 +36,28 @@ function Form({setList, setFilter, list, toast}){
                     else toast.error("Há espaço em branco",toastStyle)
                 }
             }}>
-                <input type="text" 
+            
+                <label htmlFor="description" className="label-description">Descrição</label>
+                <input type="text" className="input-description"
                 placeholder="Digite aqui sua descrição" name="description"
                 onChange={(event) => setInputDescription(event.target.value)}/>
-                <label htmlFor="description">Descrição</label>
+                
                 <span>Ex: Compra de roupas</span>
-
-                <input type="number" placeholder="1" name="value" onChange={(event) => setInputValue(event.target.value)}/>
-                <label htmlFor="value">Valor</label>
-
-                <select onChange={(event) => setInputType(event.target.value)}>
-                    <option value="">Selecione um tipo</option>
-                    <option value="Entrada">Entrada</option>
-                    <option value="Despesa">Despesa</option>
-                </select>
+                <div className="conteiner-input-type">
+                    <div className="div-input">
+                        <label htmlFor="value">Valor</label>
+                        <input type="number" placeholder="1" name="value" onChange={(event) => setInputValue(event.target.value)}/>
+                    </div>
+                    <div className="div-input select">
+                        <label htmlFor="type">Tipo de valor</label>
+                        <select name="type" onChange={(event) => setInputType(event.target.value)}>
+                            <option value="" className="select-init">Selecione um tipo</option>
+                            <option value="Entrada">Entrada</option>
+                            <option value="Despesa">Despesa</option>
+                        </select>
+                    </div>
+                </div>
+                
 
                 <button type='submit'>Inserir Valor</button>
             </form>
