@@ -106,7 +106,11 @@
     height: 18px;
 }
 
-
+@media only screen and (max-width: 1000px) {  
+    .conteiner-resume {
+        padding: 36px;
+    }
+}
 
 @media only screen and (max-width: 445px) {
     .conteiner-itens{

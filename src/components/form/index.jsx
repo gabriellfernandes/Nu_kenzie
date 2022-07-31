@@ -24,10 +24,13 @@ function Form({setList, setFilter, list, toast}){
                 event.preventDefault()
                 console.log(inputValue)
                 if(inputdescription.length !== 0 && inputValue !== "" && inputValue !== "0" && inputType !== "") {
-                    toast.success(inputType + " criada com sucesso")
+                    if(inputValue > 0) toast.success(inputType + " criada com sucesso")
+                    else toast.success("Despesa criada com sucesso")
                     
-                    if(inputType == "Entrada") setList((oldList) => [...oldList, {description: inputdescription, value: inputValue, type: inputType, id: id}])
-                    else setList((oldList) => [...oldList, {description: inputdescription, value: -inputValue, type: inputType, id: id}])
+                    
+                    if(inputType === "Entrada" && inputValue > 0) setList((oldList) => [...oldList, {description: inputdescription, value: inputValue, type: inputType, id: id}])
+                    else if (inputValue > 0) setList((oldList) => [...oldList, {description: inputdescription, value: -inputValue, type: "Despesa", id: id}])
+                    else setList((oldList) => [...oldList, {description: inputdescription, value: inputValue, type: "Despesa", id: id}])
                     
                     setFilter(list)
                     setId(id + 1)
