@@ -50,5 +50,14 @@
     }
   }
 
+@media only screen and (max-width: 530px) {
+    .conteiner-div{
+        width: 125vw;
+    }
+
+}
+
+
+  
   
 

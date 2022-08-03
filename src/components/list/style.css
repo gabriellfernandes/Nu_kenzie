@@ -112,12 +112,12 @@
     }
 }
 
-@media only screen and (max-width: 445px) {
+@media only screen and (max-width: 540px) {
     .conteiner-itens{
-        width: 100vw;
+        width: 87vw;
     }
     .item{
-        width: 90vw;
+        width: 80vw;
         padding: 0;
     }
     .conteiner-filter button{
@@ -130,7 +130,7 @@
         border-radius: 16px;
     }
     .img-noitem{
-        width: 100vw;
+        width: 80vw;
     }
     
     .conteiner-resume{
