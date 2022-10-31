@@ -10,5 +10,6 @@ Visual do site:
 
 
 Responsivo:
+
 ![image](https://user-images.githubusercontent.com/96635752/199027096-96cb9596-0be7-4781-a4fa-e56886b4e128.png)
 
