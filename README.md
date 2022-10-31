@@ -1,6 +1,6 @@
 Aplicação Web feita em REACT JS que tem o intuito de controlar as finaças do usuário, podendo adicionar tanto dispesas quanto entradas, esse valor é cadastrado no site e o usuário consegue Filtrar por categoria, visualizar o total de suas finanças, deletar alguma entrada ou despesa. 
 
-Foi praticado o uso de: Criação do projeto em typeScript, UseState, Componentes, 
+Foi praticado o uso de: Criação do projeto em Typescript, UseState, Componentes, 
 Lógica.
 
 Link: https://nu-kenzie-ten-zeta.vercel.app
